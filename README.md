@@ -1,42 +1,40 @@
-# Conversor fiel de imagens raster para SVG
+Python tool to convert raster images to SVG without altering pixels,
+colors, transparency, or the original compression.
 
-Ferramenta Python para converter imagens raster em SVG sem alterar pixels,
-cores, transparencia ou compressao original.
+Supported formats: `.png`, `.jpg`, `.jpeg`, `.jfif`, `.webp`, `.gif`, `.bmp`,
+`.tif`, `.tiff`, and `.ico`.
 
-Formatos suportados: `.png`, `.jpg`, `.jpeg`, `.jfif`, `.webp`, `.gif`, `.bmp`,
-`.tif`, `.tiff` e `.ico`.
+Important: Photos and raster images do not become true vectors without loss.
+Vectorization requires interpreting and redrawing the image, which can alter details and
+colors. That is why this tool creates an SVG with the original image embedded in
+base64. The result opens as an SVG but faithfully preserves the original image.
 
-Importante: fotos e imagens raster nao viram vetores reais sem perda.
-Vetorizar exige interpretar e redesenhar a imagem, o que pode mudar detalhes e
-cores. Por isso esta ferramenta cria um SVG com a imagem original embutida em
-base64. O resultado abre como SVG, mas preserva fielmente a imagem original.
+## Usage
 
-## Uso
-
-Converter um arquivo:
+Convert a file:
 
 ```powershell
-python .\raster_to_svg.py .\imagem.png
+python .\raster_to_svg.py .\image.png
 ```
 
-Escolher o arquivo de saida:
+Choose the output file:
 
 ```powershell
-python .\raster_to_svg.py .\imagem.webp -o .\imagem.svg
+python .\raster_to_svg.py .\image.webp -o .\image.svg
 ```
 
-Converter uma pasta inteira:
+Convert an entire folder:
 
 ```powershell
-python .\raster_to_svg.py .\minhas-imagens -o .\svgs
+python .\raster_to_svg.py .\my-images -o .\svgs
 ```
 
-Substituir SVGs existentes:
+Overwrite existing SVGs:
 
 ```powershell
-python .\raster_to_svg.py .\minhas-imagens -o .\svgs --overwrite
+python .\raster_to_svg.py .\my-images -o .\svgs --overwrite
 ```
 
-## Requisitos
+## Requirements
 
-Python 3.10 ou superior. Nao precisa instalar bibliotecas externas.
+Python 3.10 or higher. No external libraries need to be installed.
